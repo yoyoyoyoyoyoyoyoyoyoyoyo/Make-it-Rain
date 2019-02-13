@@ -1,8 +1,9 @@
-class Enemy2:
+class Enemy4:
     
-    speed = 8
+    xspeed = 8
+    yspeed = 8
     diameter = 50
-    c = color(150,150,255)
+    c = color(100,100,255)
     
     def __init__(self, x, y, team):
         self.x = x
@@ -10,12 +11,13 @@ class Enemy2:
         self.team = team
         
     def move(self):
-        self.y += self.speed
-        if self.y < 0 or self.x > height:
-            self.speed *= -1
-        if self.y > height:
-            self.y = 0
-        
+        self.x += self.xspeed
+        self.y += self.yspeed
+        if self.x < 0 or self.x > width:
+            self.xspeed *= -1
+        if self.y < 0 or self.y > height:
+            self.yspeed *= -1
+            
     def display(self):
         fill(self.c)
         ellipse(self.x, self.y, self.diameter, self.diameter)

@@ -1,8 +1,8 @@
-class Enemy2:
+class Enemy3:
     
-    speed = 8
+    speed = 16
     diameter = 50
-    c = color(150,150,255)
+    c = color(250,250,255)
     
     def __init__(self, x, y, team):
         self.x = x
@@ -10,11 +10,10 @@ class Enemy2:
         self.team = team
         
     def move(self):
-        self.y += self.speed
-        if self.y < 0 or self.x > height:
-            self.speed *= -1
-        if self.y > height:
-            self.y = 0
+        self.y += random(-self.speed, self.speed)
+        self.x += random(-self.speed, self.speed)
+        self.x = constrain(self.x, 0, width)
+        self.y = constrain(self.y, 0, height)
         
     def display(self):
         fill(self.c)
