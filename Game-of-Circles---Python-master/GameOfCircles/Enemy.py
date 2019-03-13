@@ -1,6 +1,6 @@
 from Sprite import Sprite
 
-class Enemy(sprite):
+class Enemy(Sprite):
     
     speed = 8
     diameter = 50
