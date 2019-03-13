@@ -1,8 +1,7 @@
-class Enemy3:
-    
-    speed = 16
+class Jiggle:
+    speed = 5
     diameter = 50
-    c = color(250,250,255)
+    c = color(0,255,255)
     
     def __init__(self, x, y, team):
         self.x = x
@@ -14,11 +13,3 @@ class Enemy3:
         self.x += random(-self.speed, self.speed)
         self.x = constrain(self.x, 0, width)
         self.y = constrain(self.y, 0, height)
-        
-    def display(self):
-        fill(self.c)
-        ellipse(self.x, self.y, self.diameter, self.diameter)
-        
-    def animate(self):
-        self.move()
-        self.display()
